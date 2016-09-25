@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<div th:fragment="deviceList">
+	
+	<table class="table table-bordered">
+                    <tr>
+                        <th class="text-center" >Name</th>
+                        <th class="text-center" >Address</th>
+                        <th class="text-center" >IP</th>
+                        <th class="text-center" >Transaction</th>
+                    </tr>
+                    <tr th:each="device,iterStat: ${devices}">
+                        <td class="text-center" th:text="${device.name}"></td>
+                        <td class="text-center" th:text="${device.address}"></td>
+                       	<td class="text-center" th:text="${device.IPAddress}"></td>
+                       	<td class="text-center"> 
+                       		<a data-th-href="${@blockExplorer.getTransactionUrl(device.txHash)}" target="_blank">
+                       			<span data-th-text="${#strings.abbreviate(device.txHash,15)}"></span>
+                       		</a>
+                       		<p hidden="true" data-th-text="${device.txHash}"></p>
+                       	</td>
+                    </tr>
+                </table>
+	
+	</div>
+
+</html>

@@ -1,0 +1,5 @@
+#org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+#Thu Apr 23 13:12:39 EEST 2015
+build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;IoTClient;acceptance-tests;core;counterparty_client;daemon;domain;protocol;web;
+org.springsource.ide.eclipse.gradle.linkedresources=
+org.springsource.ide.eclipse.gradle.rootprojectloc=
