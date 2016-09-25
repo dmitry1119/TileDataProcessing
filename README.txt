@@ -1,9 +1,15 @@
-Tile Data Processing
---------------------RELEASE-----------------------------------------------
+# Tile Data Processing
+
+### How to install
+
+
+--------------------------------------------RELEASE -----------------------------------------------
 requirements: JDK 8 (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 create release: gradle createRelease
 tilepay.zip will be created
----------------------------WALLET-----------------------------------------
+
+
+--------------------------------------------WALLET-------------------------------------------
 build: gradle clean build -x test
 run in testnet with connection to local|remote testnet daemon: java -Dspring.profiles.active=testnet,[local|remote]-testnet -jar web/build/libs/tilepay-0.0.4.jar
 TODO: disable our daemon mainnet functionality for now. run in mainnet: java -Dspring.profiles.active=mainnet -jar web/build/libs/tilepay-[VERSION].jar
@@ -13,13 +19,16 @@ DB, log, wallet files can be found at:
 WINDOWS: ..AppData/Roaming/tilepay
 LINUX: user.home/tilepay
 MAC: user.home/Library/Application Support/tilepay
---------------------------Version---------------------------------------------
+
+-------------------------------------------Version---------------------------------------------
 [VERSION] number has to be specified manually
 Version number can be updated from C:\Projects\tilepay\web\src\main\resources  version.properties
---------------------------Problems---------------------------------------------
+
+-------------------------------------------Problems---------------------------------------------
 Problem: org.flywaydb.core.api.FlywayException: Validate failed. Found differences between applied migrations and...
 Solution: remove db
------------------------------------Daemon------------------------------
+
+-------------------------------------------Daemon------------------------------------------
 cd daemon
 gradle clean build -x test
 run in testnet: java -Dspring.profiles.active=testnet -jar build/libs/daemon.jar
@@ -38,14 +47,16 @@ wallet file testnet location: userHome/daemon-testnet.wallet
 https://testnet.counterwallet.io
 testnet fee address: mvQRQAhN2KJia8PgH1xBdmeX3FgTRTdCST
 existence normal someone dude bridge cloud meant fan melt nice stole surface
------------------------------------IoTClient---------------------------
+
+---------------------------------------IoTClient---------------------------------------
 IoTClient project has a separate build file. Go to tilepay project ->IoTClient
 gradle clean build
 get the iotclient-0.1.0.jar file from  .../build/libs/ and run it on the raspberry 
 java -jar iotclient-0.1.0.jar
 
-in the registration form in the application you need to specify the IP address of the raspberry
------------------------------------For developers---------------------------
+In the registration form in the application, you need to specify the IP address of the raspberry
+
+--------------------------------------For developers----------------------------------
 Before commit run:
 gradle clean test -x acceptance-tests:test
 
